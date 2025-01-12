@@ -1,50 +1,116 @@
-# React + TypeScript + Vite
+ # Reddit Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Reddit clone built with React, TypeScript, Clerk Authentication, and Convex backend. This project implements core Reddit features including subreddit creation, post submission, commenting, and voting functionality.
 
-Currently, two official plugins are available:
+## Technology Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React + TypeScript
+- **Authentication**: Clerk
+- **Backend**: Convex
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM
+- **State Management**: React Hooks + Context
+- **Testing**: Jest + React Testing Library
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before you begin, ensure you have installed:
+- Node.js (v16 or higher)
+- npm (v7 or higher)
+- A Clerk account for authentication
+- A Convex account for backend services
 
-- Configure the top-level `parserOptions` property like this:
+## Environment Setup
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository:
+```bash
+git clone [your-repository-url]
+cd reddit-clone
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Create a `.env` file in the project root:
+```env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+VITE_CONVEX_URL=your_convex_deployment_url
+```
+
+4. Set up Convex:
+```bash
+npx convex dev
+```
+
+## Project Structure
+
+```
+reddit-clone/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Page components
+│   ├── hooks/         # Custom React hooks
+│   ├── lib/           # Utilities and configurations
+│   ├── styles/        # Global styles and Tailwind config
+│   └── types/         # TypeScript type definitions
+├── convex/            # Convex backend functions
+├── public/            # Static assets
+└── __tests__/        # Test files
+```
+
+## Features
+
+- User authentication with Clerk
+- Subreddit creation and management
+- Post creation with rich text support
+- Commenting system
+- Upvoting/downvoting functionality
+- Real-time updates
+- Responsive design
+- Dark mode support
+
+## Development
+
+Start the development server:
+```bash
+npm run dev
+```
+
+Run tests:
+```bash
+npm test
+```
+
+Build for production:
+```bash
+npm run build
+```
+
+## Testing
+
+We implement test-driven development practices using Jest and React Testing Library. To run tests:
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm test -- --watch
+
+# Run tests with coverage
+npm test -- --coverage
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

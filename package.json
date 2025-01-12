@@ -18,6 +18,9 @@
   "devDependencies": {
     "@clerk/backend": "^1.21.4",
     "@eslint/js": "^9.17.0",
+    "@types/body-parser": "^1.19.5",
+    "@types/connect": "^3.4.38",
+    "@types/connect-history-api-fallback": "^1.5.4",
     "@types/node": "^22.10.5",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",

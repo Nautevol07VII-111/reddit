@@ -22,10 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-node_modules/
-.DS_Store
+DS_Store
 .env.local
-
-# .env.local 
-.env.local
-

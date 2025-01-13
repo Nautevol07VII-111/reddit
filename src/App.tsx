@@ -6,9 +6,15 @@ import SubredditPage from "./pages/SubredditPage";
 import SubmitPage from "./pages/SubmitPage";
 import PostPage from "./pages/PostPage";
 import "./styles/App.css";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "@clerk/clerk-react";
 
 function App() {
+  const [isCreatePostOpen, setIsCreatePostOpen] = useState(false);
+
+  
   return ( 
+    <div className="min-h-screen bg-background text-foreground">
   <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -21,6 +27,11 @@ function App() {
       </Route>
     </Routes>
   </BrowserRouter>
+
+<h1 className="text-2xl font-bold p-4">
+  Reddit-Clone
+</h1>
+</div>
   );
 }
 

@@ -1,2 +1,2 @@
 # reddit
-Storing my reddit-clone here!
+* Storing my reddit-clone here!
